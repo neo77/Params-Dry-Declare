@@ -1,4 +1,4 @@
-Params
+Params-Declare
 
 The README is used to introduce the module and provide instructions on
 how to install the module, any machine dependencies it may have (for
@@ -26,26 +26,26 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Params
+    perldoc Params::Declare
 
 You can also look for information at:
 
     RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Params
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Params-Declare
 
     AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Params
+        http://annocpan.org/dist/Params-Declare
 
     CPAN Ratings
-        http://cpanratings.perl.org/d/Params
+        http://cpanratings.perl.org/d/Params-Declare
 
     Search CPAN
-        http://search.cpan.org/dist/Params/
+        http://search.cpan.org/dist/Params-Declare/
 
 
 LICENSE AND COPYRIGHT
 
-Copyright (C) 2013 Pawel Guspiel
+Copyright (C) 2013 Pawel Guspiel (neo77)
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the Artistic License (2.0). You may obtain a

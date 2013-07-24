@@ -5,12 +5,12 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME             => 'Params::Declare',
-    AUTHOR           => q{Pawel Guspiel <neo@cpan.org>},
+    AUTHOR           => q{Pawel Guspiel (neo77) <neo@cpan.org>},
     VERSION_FROM     => 'lib/Params/Declare.pm',
     ABSTRACT_FROM    => 'lib/Params/Declare.pm',
-        LICENSE          => 'Artistic_2_0',
+    LICENSE          => 'Artistic_2_0',
     PL_FILES         => {},
-    MIN_PERL_VERSION => 5.010,
+    MIN_PERL_VERSION => 5.006,
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => 0,
     },
@@ -22,5 +22,7 @@ WriteMakefile(
         'Exporter' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES => 'Params-*' },
+    clean => { FILES => 'Params-Declare-*' },
 );
+
+

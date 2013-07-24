@@ -7,7 +7,7 @@ use Test::More;
 plan tests => 1;
 
 BEGIN {
-    use_ok( 'Params' ) || print "Bail out!\n";
+    use_ok( 'Params::Declare' ) || print "Bail out!\n";
 }
 
-diag( "Testing Params $Params::VERSION, Perl $], $^X" );
+diag( "Testing Params::Declare $Params::Declare::VERSION, Perl $], $^X" );
