@@ -1,4 +1,4 @@
-Params-Declare
+Params-Dry-Declare
 
 The README is used to introduce the module and provide instructions on
 how to install the module, any machine dependencies it may have (for
@@ -26,21 +26,22 @@ SUPPORT AND DOCUMENTATION
 After installing, you can find documentation for this module with the
 perldoc command.
 
-    perldoc Params::Declare
+    perldoc Params::Dry::Declare
+    perldoc Params::Dry
 
 You can also look for information at:
 
     RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Params-Declare
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Params-Dry-Declare
 
     AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Params-Declare
+        http://annocpan.org/dist/Params-Dry-Declare
 
     CPAN Ratings
-        http://cpanratings.perl.org/d/Params-Declare
+        http://cpanratings.perl.org/d/Params-Dry-Declare
 
     Search CPAN
-        http://search.cpan.org/dist/Params-Declare/
+        http://search.cpan.org/dist/Params-Dry-Declare/
 
 
 LICENSE AND COPYRIGHT

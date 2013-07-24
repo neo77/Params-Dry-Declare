@@ -17,8 +17,8 @@ our $VERSION = 1.0;
 use FindBin qw/$Bin/;
 use lib $Bin."/../lib";
 
-use Params::Declare;
-use Params qw(:short);
+use Params::Dry::Declare;
+use Params::Dry qw(:short);
 # --- cpan libs ---
 
 use Data::Dumper;

@@ -26,7 +26,7 @@
 #*
 #*      I'm suggesting you to use coloring in your text editor for p_\w+ to see function parameters everywhere
 
-package Params::Declare;
+package Params::Dry::Declare;
 
     use strict;
     use warnings;
@@ -34,7 +34,7 @@ package Params::Declare;
 
 # --- version ---
    # use vars($VERSION);         # VERSION as global variable
-    our $VERSION = 1.0_0;
+    our $VERSION = 1.00;
 
 #=------------------------------------------------------------------------ { use, constants }
 
@@ -83,7 +83,7 @@ package Params::Declare;
 
             } 
             $_;
-        }
+        };
 
 0115&&0x4d;
 

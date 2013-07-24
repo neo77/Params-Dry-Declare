@@ -1,5 +1,5 @@
 Changes
-lib/Params/Declare.pm
+lib/Params/Dry/Declare.pm
 Makefile.PL
 MANIFEST			This list of files
 README

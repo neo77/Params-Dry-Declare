@@ -14,5 +14,5 @@ inc/
 nytprof.out
 pod2htm*.tmp
 pm_to_blib
-Params-Declare-*
-Params-Declare-*.tar.gz
+Params-Dry-Declare-*
+Params-Dry-Declare-*.tar.gz
