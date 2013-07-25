@@ -1,4 +1,3 @@
-#!/usr/bin/env perl
 #*
 #* Name: Params::Dry::Declare (some magic for Params::Dry :)
 #* Info: Extension to Params::Dry, which make possible declaration of the parameters
@@ -32,8 +31,7 @@ package Params::Dry::Declare;
     use warnings;
 
     # --- version ---
-    # use vars($VERSION);         # VERSION as global variable
-    our $VERSION = 1.00;
+    our $VERSION = 0.99;
 
     #=------------------------------------------------------------------------ { use, constants }
 
@@ -85,42 +83,45 @@ package Params::Dry::Declare;
     0115 && 0x4d;
 
 #+ End of Params::Declare magic :)
-# ABSTRACT: Declare extension for Params::Dry - Simple Global Params Management System
+# ABSTRACT: Declare extension for Params::Dry - Simple Global Params Management System which helps you to keep the DRY rule everywhere
 
 #+ End of Params::Dry
 __END__
 =head1 NAME
 
-Params::Dry::Declare - Declare extension for Params::Dry - Simple Global Params Management System
+Params::Dry::Declare - Declare extension for Params::Dry - Simple Global Params Management System which helps you to keep the DRY rule everywhere
 
 =head1 VERSION
 
-version 1.00
+version 0.99 (beta)
 
 =head1 SYNOPSIS
 
 Params::Dry::Declare (some magic for Params::Dry :)
 Extension to Params::Dry, which make possible declaration of the parameters, keeping comments declarations and all this things near.
 
+=head1 DESCRIPTION
+
 =head2 Fast start!
 
-=over 2
+=over 4
 
-=item B<typedef> - defines global types for variables (from Params::Dry)
+=item * B<typedef> - defines global types for variables (from Params::Dry)
 
-=item B<!> - required parameter
+=item * B<!> - required parameter
 
-=item B<?> - optional parameter
+=item * B<?> - optional parameter
 
-=item B<---> - comment
+=item * B<---> - comment
 
-=item B<no_more> - not needed any more :) 
+=item * B<no_more> - not needed any more :) 
 
-=item B<__@_> - not needed any more :)
+=item * B<__@_> - not needed any more :)
 
 =back
 
 =head2 Example:
+
     # The module allow parameters declaration in following form:
 
           sub new (
@@ -146,6 +147,11 @@ Extension to Params::Dry, which make possible declaration of the parameters, kee
     #  As a consequence of using this module you can use parameters in the function body as follows:
           print "name: ".$p_name;
 
+    # IMPORTANT - to mark declaration of no params function please use empty params list (;)
+        
+        sub get_no_params(;) {
+
+        }
 
 =head2 Grammar:
 
@@ -155,25 +161,32 @@ C<required/optional> C<variable name>  : [ C<type name> ] [ = C<default value> ]
 
 where:
 
-=over 2
+=over 4
 
-=item B<!> - required parameter
+=item * B<!> - required parameter
 
-=item B<?> - optional parameter
+=item * B<?> - optional parameter
 
-=item B<variable name> - any perl variable name
+=item * B<variable name> - any perl variable name
 
-=item B<type name> - type defined by typedef or ad-hoc type
+=item * B<type name> - type defined by typedef or ad-hoc type
 
-=item B<default value> - default value for the parameter
+=item * B<default value> - default value for the parameter
 
-=item B<comment> - just a comment to remember what this variable is doing
+=item * B<comment> - just a comment to remember what this variable is doing
 
 =back
 
 Because all parameters are available as $p_C<variable name> I'm suggesting you to use coloring in your text editor for $p_\w+ to see function parameters everywhere
 
-=head1 DESCRIPTION
+=head2 Important!
+
+To mark declaration of no params function please use empty params list (;)
+        
+        sub get_no_params(;) {
+
+        }
+
 
 =head2 Understand main concepts 
 
@@ -221,7 +234,7 @@ L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Params-Dry-Declare>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Params-Dry>
+L<http://annocpan.org/dist/Params-Dry-Declare>
 
 =item * CPAN Ratings
 
@@ -232,10 +245,6 @@ L<http://cpanratings.perl.org/d/Params-Dry-Declare>
 L<http://search.cpan.org/dist/Params-Dry-Declare/>
 
 =back
-
-
-=head1 ACKNOWLEDGEMENTS
-
 
 =head1 LICENSE AND COPYRIGHT
 
