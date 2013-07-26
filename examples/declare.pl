@@ -91,7 +91,7 @@ typedef 'name', 'String[20]';
 
     # get effective type
     typedef 'super_name', 'name';
-    print Params::__get_effective_type('super_name');
+    print Params::Dry::__get_effective_type('super_name');
 
 
 
