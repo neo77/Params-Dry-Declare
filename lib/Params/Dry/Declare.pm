@@ -36,6 +36,7 @@ package Params::Dry::Declare;
     #=------------------------------------------------------------------------ { use, constants }
 
     use Filter::Simple;    # extends subroutine definition
+    use Params::Dry;       # required to take care of parameters (and because is the best of course ;)
 
     #=------------------------------------------------------------------------ { module magic }
 
