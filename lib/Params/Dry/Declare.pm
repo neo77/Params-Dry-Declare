@@ -25,18 +25,20 @@
 #*
 #*      I'm suggesting you to use coloring in your text editor for p_\w+ to see function parameters everywhere
 
+use Params::Dry qw(:short);     # required to take care of parameters (and because is the best of course ;)
+
 package Params::Dry::Declare;
 
     use strict;
     use warnings;
 
     # --- version ---
-    our $VERSION = 0.9901;
+    our $VERSION = 0.9902;
 
     #=------------------------------------------------------------------------ { use, constants }
 
-    use Filter::Simple;    # extends subroutine definition
-    use Params::Dry;       # required to take care of parameters (and because is the best of course ;)
+
+    use Filter::Simple;             # extends subroutine definition
 
     #=------------------------------------------------------------------------ { module magic }
 

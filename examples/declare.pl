@@ -18,7 +18,6 @@ use FindBin qw/$Bin/;
 use lib $Bin."/../lib";
 
 use Params::Dry::Declare;
-use Params::Dry qw(:short);
 # --- cpan libs ---
 
 use Data::Dumper;
