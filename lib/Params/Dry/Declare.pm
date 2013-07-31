@@ -33,7 +33,7 @@ package Params::Dry::Declare;
     use warnings;
 
     # --- version ---
-    our $VERSION = 0.9902;
+    our $VERSION = 0.9903;
 
     #=------------------------------------------------------------------------ { use, constants }
 

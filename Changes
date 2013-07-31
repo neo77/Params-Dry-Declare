@@ -1,6 +1,10 @@
 Revision history for Params-Dry-Declare
 
-0.99    Date/time
-        First version, released on an unsuspecting world.
-0.9901  Fix example (Param -> Param::Dry
-
+0.9903 2013-07-30
+ - RT#87453 fix Changes format
+0.9902 2013-07-30 
+ - Adding Params::Dry use in module,
+0.9901 2013-07-26 
+ - Fix example (Param -> Param::Dry)
+0.99 2013-07-25
+ - First version, released on an unsuspecting world.
