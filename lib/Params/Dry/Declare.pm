@@ -6,7 +6,7 @@
 #*      The module allow parameters declaration in following form:
 #*
 #*          sub new (
-#*              ! name:;                                    --- name of the user 
+#*              ! name:;                                    --- name of the user
 #*              ? second_name   : name      = 'unknown';    --- second name
 #*              ? details       : String    = 'yakusa';     --- details
 #*          ) {
@@ -25,20 +25,19 @@
 #*
 #*      I'm suggesting you to use coloring in your text editor for p_\w+ to see function parameters everywhere
 
-use Params::Dry qw(:short);     # required to take care of parameters (and because is the best of course ;)
+use Params::Dry qw(:short);    # required to take care of parameters (and because is the best of course ;)
 
 package Params::Dry::Declare;
-
+{
     use strict;
     use warnings;
 
     # --- version ---
-    our $VERSION = 0.9903;
+    our $VERSION = 0.9904;
 
     #=------------------------------------------------------------------------ { use, constants }
 
-
-    use Filter::Simple;             # extends subroutine definition
+    use Filter::Simple;        # extends subroutine definition
 
     #=------------------------------------------------------------------------ { module magic }
 
@@ -63,27 +62,27 @@ package Params::Dry::Declare;
                 #+ parse
                 $param =~ /^(?<is_rq>[!?]) \s* (?<param_name>\w+) \s* : \s* (?<param_type>\w+ (?:\[.+?\])? )? \s* (?:= \s* (?<default>.+))? (?:[#].*)?$/x;
 
-                my ( $is_rq, $param_name, $param_type, $default ) = ('') x 4;
+                my ( $is_rq, $param_name, $param_type, $default ) = ( '' ) x 4;
 
-                $is_rq = $+{'is_rq'} eq '!';
-                ( $param_name, $param_type, $default ) = ( $+{'param_name'}, $+{'param_type'}, $+{'default'} );
+                $is_rq = $+{ 'is_rq' } eq '!';
+                ( $param_name, $param_type, $default ) = ( $+{ 'param_name' }, $+{ 'param_type' }, $+{ 'default' } );
                 $param_type ||= $param_name;
 
-                $variables_string .= "my \$p_$param_name = " . ( ($is_rq) ? 'rq' : 'op' ) . " '$param_name'";
+                $variables_string .= "my \$p_$param_name = " . ( ( $is_rq ) ? 'rq' : 'op' ) . " '$param_name'";
                 $variables_string .= ", '$param_type'" if $param_type;
                 $variables_string .= ", $default"      if $default;
                 $variables_string .= '; ';
-            }
+            } #+ end of: for my $param ( split /\s*;\s*/...)
 
             # --- for errors in correct lines
             my $new_lines = "\n" x ( $orig_sub =~ s/\n/\n/gs );
             s/\Q$orig_sub/sub $sub_name { $new_lines $variables_string no_more;/;
 
-        }
+        } #+ end of: while ( my ( $orig_sub, $sub_name...))
         $_;
     };
-
-    0115 && 0x4d;
+};
+0115 && 0x4d;
 
 #+ End of Params::Declare magic :)
 # ABSTRACT: Declare extension for Params::Dry - Simple Global Params Management System which helps you to keep the DRY rule everywhere
@@ -117,7 +116,7 @@ Extension to Params::Dry, which make possible declaration of the parameters, kee
 
 =item * B<---> - comment
 
-=item * B<no_more> - not needed any more :) 
+=item * B<no_more> - not needed any more :)
 
 =item * B<__@_> - not needed any more :)
 
@@ -128,7 +127,7 @@ Extension to Params::Dry, which make possible declaration of the parameters, kee
     # The module allow parameters declaration in following form:
 
           sub new (
-              ! name:;                                    --- name of the user 
+              ! name:;                                    --- name of the user
               ? second_name   : name      = 'unknown';    --- second name
               ? details       : String    = 'yakusa';     --- details
           ) {
@@ -142,7 +141,7 @@ Extension to Params::Dry, which make possible declaration of the parameters, kee
 
               my $p_name          = rq 'name', DEFAULT_TYPE;               # name of the user
               my $p_second_name   = op 'second_name', 'name', 'unknown';   # second name
-              
+
               ...
 
     # as it was in Params::Dry
@@ -151,7 +150,7 @@ Extension to Params::Dry, which make possible declaration of the parameters, kee
           print "name: ".$p_name;
 
     # IMPORTANT - to mark declaration of no params function please use empty params list (;)
-        
+
         sub get_no_params(;) {
 
         }
@@ -185,24 +184,24 @@ Because all parameters are available as $p_C<variable name> I'm suggesting you t
 =head2 Important!
 
 To mark declaration of no params function please use empty params list (;)
-        
+
         sub get_no_params(;) {
 
         }
 
 
-=head2 Understand main concepts 
+=head2 Understand main concepts
 
 First. If you can use any function as in natural languague - you will use and understand it even after few months.
 
-Second. Your lazy life will be easy, and you will reduce a lot of errors if you will have guarancy that your parameter 
+Second. Your lazy life will be easy, and you will reduce a lot of errors if you will have guarancy that your parameter
 in whole project means the same ( ex. when you see 'client' you know that it is always String[32] ).
 
 Third. You want to set the type in one and only in one place.
 
 Yes, DRY principle in its pure form!
 
-So all your dreams you can now find in this module. 
+So all your dreams you can now find in this module.
 
 And even more, every parameter is declared in the function header and no where more. So it helps keeping your code clean!
 
