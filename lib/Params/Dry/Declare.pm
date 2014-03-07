@@ -33,7 +33,7 @@ package Params::Dry::Declare;
     use warnings;
 
     # --- version ---
-    our $VERSION = 0.9904;
+    our $VERSION = 0.9905;
 
     #=------------------------------------------------------------------------ { use, constants }
 
@@ -95,7 +95,7 @@ Params::Dry::Declare - Declare extension for Params::Dry - Simple Global Params 
 
 =head1 VERSION
 
-version 0.9901 (beta)
+version 0.9905 (beta)
 
 =head1 SYNOPSIS
 

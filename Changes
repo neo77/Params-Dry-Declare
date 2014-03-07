@@ -1,5 +1,7 @@
 Revision history for Params-Dry-Declare
 
+0.9905 2014-03-07
+    - kwalitee: fix version number in pod
 0.9904 2014-03-07
     - kwalitee: LICENSE file META.yml
 0.9903 2013-07-30
