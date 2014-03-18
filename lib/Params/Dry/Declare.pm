@@ -25,7 +25,7 @@
 #*
 #*      I'm suggesting you to use coloring in your text editor for p_\w+ to see function parameters everywhere
 
-use Params::Dry qw(:short);    # required to take care of parameters (and because is the best of course ;)
+use Params::Dry 1.20 qw(:short);    # required to take care of parameters (and because is the best of course ;)
 
 package Params::Dry::Declare;
 {
@@ -33,11 +33,11 @@ package Params::Dry::Declare;
     use warnings;
 
     # --- version ---
-    our $VERSION = 0.9905;
+    our $VERSION = 0.9906;
 
     #=------------------------------------------------------------------------ { use, constants }
 
-    use Filter::Simple;        # extends subroutine definition
+    use Filter::Simple;             # extends subroutine definition
 
     #=------------------------------------------------------------------------ { module magic }
 
@@ -60,7 +60,7 @@ package Params::Dry::Declare;
                 next unless $param;
 
                 #+ parse
-                $param =~ /^(?<is_rq>[!?]) \s* (?<param_name>\w+) \s* : \s* (?<param_type>\w+ (?:\[.+?\])? )? \s* (?:= \s* (?<default>.+))? (?:[#].*)?$/x;
+                $param =~ /^(?<is_rq>[!?]) \s* (?<param_name>\w+) \s* : \s* (?<param_type>\w+ (?:\[.+?\])? (?:\|\w+ (?:\[.+?\])?)* )? \s* (?:= \s* (?<default>.+))? (?:[#].*)?$/x;
 
                 my ( $is_rq, $param_name, $param_type, $default ) = ( '' ) x 4;
 
@@ -95,7 +95,7 @@ Params::Dry::Declare - Declare extension for Params::Dry - Simple Global Params 
 
 =head1 VERSION
 
-version 0.9905 (beta)
+version 0.9906 (beta)
 
 =head1 SYNOPSIS
 
@@ -129,7 +129,7 @@ Extension to Params::Dry, which make possible declaration of the parameters, kee
           sub new (
               ! name:;                                    --- name of the user
               ? second_name   : name      = 'unknown';    --- second name
-              ? details       : String    = 'yakusa';     --- details
+              ? details       : String|Int    = 'yakusa';     --- details
           ) {
 
           ...
@@ -171,7 +171,7 @@ where:
 
 =item * B<variable name> - any perl variable name
 
-=item * B<type name> - type defined by typedef or ad-hoc type
+=item * B<type name> - type defined by typedef or ad-hoc type (alternative types can be added after pipe(|) sign ex. String[3]|Int[2])
 
 =item * B<default value> - default value for the parameter
 

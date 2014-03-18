@@ -19,12 +19,12 @@ no_index:
     - inc
 requires:
   Exporter: 0
-  Params::Dry: 0
+  Params::Dry: 1.20
   perl: 5.006
 provides:
-    Params::Dry:
+    Params::Dry::Declare:
         file: lib/Params/Dry/Declare.pm
-        version: 0.9905
+        version: 0.9906
 resources: 
     license: http://opensource.org/licenses/artistic-license-2.0.php
     repository: https://github.com/neo77/Params-Dry-Declare
@@ -33,4 +33,4 @@ keywords:
     - params
     - parameters
     - 'named parameters'
-version: 0.9905
+version: 0.9906

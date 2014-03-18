@@ -26,20 +26,20 @@ use Data::Dumper;
 
 #=------------------------------------------------------------------------( typedef definitions )
 
-typedef 'name', 'String[20]';
+typedef 'name', 'String[20]|Int';
 
 #=------------------------------------------------------------------------( functions )
 
     sub new (
-                ! name:;                                    --- name of the user 
+                ! name:;                                    --- name of the user
                 ? second_name   : name      = 'unknown';    --- second name
                 ? details       : String    = 'yakusa';     --- details
             ) {
-    
-    return bless { 
+
+    return bless {
                     name        => $p_name,
                     second_name => $p_second_name,
-                    details     => $p_details, 
+                    details     => $p_details,
                 }, 'ParamsTest';
     }
 
@@ -53,9 +53,9 @@ typedef 'name', 'String[20]';
 
 
     sub print_message (
-                ! name: = $self->get_name;      --- name of the user 
-                ! text: String = 1;             --- message text
-        
+                ! name: = $self->get_name;      --- name of the user
+                ! text: String|Int = 1;             --- message text
+
         ) {
         print "For: $p_name\n\nText:\n$p_text\n\n";
     }
@@ -66,9 +66,9 @@ typedef 'name', 'String[20]';
     }
 
     sub print_messages (
-                ! name: = $self->get_name;      --- name of the user 
+                ! name: = $self->get_name;      --- name of the user
                 ! text: String = 1;             --- message text
-        
+
         ) {
         print "For: $p_name\n\nText:\n$p_text\n\n";
     }
