@@ -46,7 +46,7 @@
    "provides" : {
       "Params::Dry::Declare" : {
          "file" : "lib/Params/Dry/Declare.pm",
-         "version" : "0.9906"
+         "version" : "0.9907"
       }
    },
    "release_status" : "stable",
@@ -58,5 +58,5 @@
          "url" : "https://github.com/neo77/Params-Dry-Declare"
       }
    },
-   "version" : "0.9906"
+   "version" : "0.9907"
 }

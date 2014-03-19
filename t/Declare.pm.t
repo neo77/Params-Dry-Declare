@@ -19,6 +19,7 @@ use Params::Dry qw(:short);
 
 typedef 'name', 'String[20]';
 
+#>>>
 ## Please see file perltidy.ERR
 sub new (
             ! name:;                                    --- name of the user
@@ -69,6 +70,7 @@ sub multi (
     return "Value: $p_multi";
 }
 
+#<<<
 #=------------------------------------------------------------------------( main )
 
 package main;
@@ -87,11 +89,13 @@ ok($pawel->print_message( text => 'Some message for you has arrived') eq 'For: P
     # no parameters
 ok($pawel->gret eq 'all ok', 'no params test');
 
-ok($pawel->multi(multi => 'aa') eq 'Value: aa', 'positive test (multi String)');
-ok($pawel->multi(multi => '555') eq 'Value: 555', 'positive test (multi Int)');
-dies_ok (sub { $pawel->multi(multi => 'aaa') }, 'out of range test (multi String)');
-dies_ok (sub { $pawel->multi(multi => '4444') }, 'out of range test (multi Int)');
-
+SKIP: {
+    skip "Multi types feature requires Params::Dry 1.20 or higher version. Skipping tests",4 if Params::Dry->VERSION < 1.20;
+        ok($pawel->multi(multi => 'aa') eq 'Value: aa', 'positive test (multi String)');
+        ok($pawel->multi(multi => '555') eq 'Value: 555', 'positive test (multi Int)');
+        dies_ok (sub { $pawel->multi(multi => 'aaa') }, 'out of range test (multi String)');
+        dies_ok (sub { $pawel->multi(multi => '4444') }, 'out of range test (multi Int)');
+}
 ok($pawel->gret eq 'all ok', 'no params test');
 
 

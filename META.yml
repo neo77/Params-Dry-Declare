@@ -24,7 +24,7 @@ requires:
 provides:
     Params::Dry::Declare:
         file: lib/Params/Dry/Declare.pm
-        version: 0.9906
+        version: 0.9907
 resources: 
     license: http://opensource.org/licenses/artistic-license-2.0.php
     repository: https://github.com/neo77/Params-Dry-Declare
@@ -33,4 +33,4 @@ keywords:
     - params
     - parameters
     - 'named parameters'
-version: 0.9906
+version: 0.9907

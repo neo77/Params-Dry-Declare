@@ -1,5 +1,7 @@
 Revision history for Params-Dry-Declare
 
+0.9907 2014-03-18
+ - multi types tests are skipped if Params::Dry < 1.20
 0.9906 2014-03-18
  - adding support for multi types provided in Params::Dry
 0.9905 2014-03-07

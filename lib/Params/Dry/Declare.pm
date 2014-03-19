@@ -25,7 +25,8 @@
 #*
 #*      I'm suggesting you to use coloring in your text editor for p_\w+ to see function parameters everywhere
 
-use Params::Dry 1.20 qw(:short);    # required to take care of parameters (and because is the best of course ;)
+use Params::Dry qw(:short);    # required to take care of parameters (and because is the best of course ;)
+                               # for multi types 1.20 or higher is required
 
 package Params::Dry::Declare;
 {
@@ -33,11 +34,11 @@ package Params::Dry::Declare;
     use warnings;
 
     # --- version ---
-    our $VERSION = 0.9906;
+    our $VERSION = 0.9907;
 
     #=------------------------------------------------------------------------ { use, constants }
 
-    use Filter::Simple;             # extends subroutine definition
+    use Filter::Simple;        # extends subroutine definition
 
     #=------------------------------------------------------------------------ { module magic }
 
@@ -95,7 +96,7 @@ Params::Dry::Declare - Declare extension for Params::Dry - Simple Global Params 
 
 =head1 VERSION
 
-version 0.9906 (beta)
+version 0.9907 (beta)
 
 =head1 SYNOPSIS
 
